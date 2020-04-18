@@ -57,6 +57,30 @@ public:
 
 		assert_eq<int>(expected, value);
 	}
+
+	static void test4() {
+		unsigned int sizeA = 9, sizeB = 5;
+
+		int vecA[] = { 7, -8, -5, -2, -5, -2, 40, 7, -7 };
+		int vecB[] = { -8, -5, -2, 7, 40 };
+
+		unsigned int expected = 8;
+		unsigned int value = CountCommon(sizeA, vecA, sizeB, vecB);
+
+		assert_eq<int>(expected, value);
+	}
+
+	static void test5() {
+			unsigned int sizeA = 10, sizeB = 6;
+
+			int vecA[] = { 7, -8, -5, -2, -5, -2, 40, 7, -7, -2147483648 };
+			int vecB[] = { -8, -5, -2, -2147483648, 7, 40 };
+
+			unsigned int expected = 9;
+			unsigned int value = CountCommon(sizeA, vecA, sizeB, vecB);
+
+			assert_eq<int>(expected, value);
+		}
 };
 
 #endif

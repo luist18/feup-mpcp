@@ -27,5 +27,5 @@ void Tester::run() {
 		counter++;
 	}
 
-	cout << passed << " have passed in a total of " << functions.size() << " tests.";
+	cout << passed << " tests have passed in a total of " << functions.size() << " tests.";
 }
