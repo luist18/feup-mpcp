@@ -21,7 +21,17 @@ public:
 		t.add(count_common_test::test4);
 		t.add(count_common_test::test5);*/
 
-		t.add(floatingpoint_test::example);
+		t.add(calculator_test::example);
+		t.add(calculator_test::test1);
+		t.add(calculator_test::test2);
+		t.add(calculator_test::test3);
+		t.add(calculator_test::test4);
+		t.add(calculator_test::test5);
+		t.add(calculator_test::test6);
+		t.add(calculator_test::test7);
+		t.add(calculator_test::test8);
+		t.add(calculator_test::test9);
+		t.add(calculator_test::test10);
 
 		t.run();
 	}

@@ -1,5 +1,8 @@
 #include "tester.h"
 #include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <sstream>
 #include "exception/assertexception.h"
 
 using namespace std;
@@ -27,5 +30,7 @@ void Tester::run() {
 		counter++;
 	}
 
-	cout << passed << " tests have passed in a total of " << functions.size() << " tests.";
+	int percentage = passed * 100 / functions.size();
+
+	cout << passed << " tests have passed in a total of " << functions.size() << " tests. [" << percentage << "%]";
 }
