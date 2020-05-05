@@ -20,13 +20,14 @@ cicle:
 	smull	x9, w9, w0
 	// verify overflow
 	cmp		x9, #0
-	csneg	x9, x9, x9, gt	// absolute value
-	cmp		x9, x15			// overflow with max int
+	csneg	x10, x9, x9, gt	// absolute value
+	cmp		x10, x15			// overflow with max int
 	b.gt	overflow
 	sub		w1, w1, #1
 	b		cicle
 
 overflow:
+	ldp 	x29, x30, [sp], #16
 	mov		x9, #0
 
 end:

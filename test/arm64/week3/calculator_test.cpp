@@ -182,6 +182,48 @@ public:
 			assert_eq<int>(res[i], vec3[i]);
 		}
 	}
+
+	static void test11(){
+		int size = 6;
+
+		char vec1[] = {'*', '*', '*', '*', '*', '*'};
+
+		int vec3[] = {1, 2, 3, 0, 1, -25};
+		int vec2[] = {1, -1073741824, -10, 4, 5, 25};
+
+		int value = Calculator(size, vec1, vec2, vec3);
+
+		int res[] = {1, -2147483648, -30, 0, 5, -625};
+
+		assert_eq<int>(0, value);
+
+		for (int i = 0; i < size; ++i) {
+			assert_eq<int>(res[i], vec3[i]);
+		}
+	}
+
+	static void test12(){
+		int size = 6;
+
+		char vec1[] = {'P', 'P', 'P', 'P', 'P', 'P'};
+
+		int vec3[] = {5, 0, -8, 2, -3, 1};
+		int vec2[] = {1, 0, 0, 10, 3, 1};
+
+		int value = Calculator(size, vec1, vec2, vec3);
+
+		int res[] = {5, 1, 1, 1024, -27, 1};
+
+		assert_eq<int>(0, value);
+
+		for (int i = 0; i < size; ++i) {
+			assert_eq<int>(res[i], vec3[i]);
+		}
+	}
+
+	static void test13(){
+
+	}
 };
 
 #endif

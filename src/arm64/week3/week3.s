@@ -1,9 +1,9 @@
 .extern power
 .text
-.global Calculator2
-.type Calculator2, "function"
+.global Calculator
+.type Calculator, "function"
 
-Calculator2:
+Calculator:
     stp				x29, x30, [sp, #-96]!
 	mov				x29, sp
     eor             w9, w9, w9
@@ -65,11 +65,10 @@ op_product:
  * Power operation. x9-15 need to be stored in the stack as well as the x0 and x1
  */
 op_power:
-	stp				x15, x14, [sp, #16]
-	stp				x13, x12, [sp, #32]
-	stp				x11, x10, [sp, #48]
-	stp				x9, x1, [sp, #64]
-	str				x0,	[sp, #80]
+	stp				d15, d14, [sp, #16]
+	stp				d13, d12, [sp, #32]
+	stp				d11, d10, [sp, #48]
+	str				d9,	[sp, #80]
 
 	mov				x0, x11
 	mov				x1, x12

@@ -1,6 +1,7 @@
 #ifndef ASSERTS_H_
 #define ASSERTS_H_
 
+#include <stdio.h>
 #include <sstream>
 #include <iostream>
 #include <iomanip>
@@ -29,7 +30,7 @@ namespace asserts {
 			double eps = abs(a - b);
 
 			if (eps > EPSILON){
-				c << "Expected " << std::fixed << std::setprecision(11) << expected << " and got " << std::fixed << std::setprecision(11) << value;
+				c << "Expected " << std::fixed << std::setprecision(11) << a << " and got " << std::fixed << std::setprecision(11) << b;
 				throw assert_exception(c.str());
 			}
 		} else if (expected != value) {

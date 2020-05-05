@@ -5,20 +5,20 @@
 
 using namespace asserts;
 
+extern "C" long interval_counter(float *V, long int n, float a, float b);
+
 extern "C" double internal_product(float *X, float *Y, int n);
+
+extern "C" double cosx(double x);
+
+extern "C" double func_cosx(double x);
 
 class floatingpoint_test {
 public:
 	static void example() {
-		int size = 3;
+		double value = func_cosx(45);
 
-		float a[] = {3.5, 0.9, -2.1};
-
-		float b[] = {4.3, 0.1, 3.7};
-
-		double expected = 3.5 * 4.3 + 0.9 * 0.1 + -2.1 * 3.7;
-
-		double value = internal_product(a, b, size);
+		double expected = 0.70710;
 
 		assert_eq<double>(expected, value);
 	}
