@@ -1,5 +1,5 @@
-#ifndef TEST_H_
-#define TEST_H_
+#ifndef EXAMPLE_TEST_H_
+#define EXAMPLE_TEST_H_
 
 #include "../../../src/test/asserts.h"
 

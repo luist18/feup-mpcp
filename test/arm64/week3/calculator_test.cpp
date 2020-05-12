@@ -220,10 +220,6 @@ public:
 			assert_eq<int>(res[i], vec3[i]);
 		}
 	}
-
-	static void test13(){
-
-	}
 };
 
 #endif

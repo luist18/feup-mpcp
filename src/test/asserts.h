@@ -6,6 +6,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cmath>
+#include <string>
 #include <limits>
 #include "exception/assertexception.h"
 
@@ -57,6 +58,24 @@ namespace asserts {
 				c << "Expected " << expected << " and got " << value;
 
 			throw assert_exception(c.str());
+		}
+	}
+
+	template<typename T>
+	void assert_vector_eq(T expected[], T value[], unsigned long size){
+		stringstream expected_stream, value_stream, c;
+
+		for (unsigned long i = 0; i < size; i++){
+			expected_stream << expected[i] << ", ";
+			value_stream << value[i] << ", ";
+		}
+
+		if (expected_stream.str().compare(value_stream.str()) != 0){
+			c << "Expected " << expected_stream.str().substr(0, expected_stream.str().size() - 2) << " and got " << value_stream.str().substr(0, value_stream.str().size() - 2);
+
+			throw assert_exception(c.str());
+		} else {
+			cout << "Expected " << expected_stream.str().substr(0, expected_stream.str().size() - 2) << " and got " << value_stream.str().substr(0, value_stream.str().size() - 2) << endl;
 		}
 	}
 }
