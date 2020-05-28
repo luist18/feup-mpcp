@@ -1,7 +1,6 @@
 #include "../src/test/tester.h"
 
-#include "arm64/week4/estep_test.cpp"
-#include "arm64/simd/simd_test.cpp"
+#include "arm64/week5/freqchars_test.cpp"
 
 /*
  * Include your cpp unit test files here and then add the static functions to
@@ -12,18 +11,13 @@ public:
 	static void run() {
 		Tester t;
 
-		t.add(estep_test::example);
-		t.add(estep_test::test1);
-		t.add(estep_test::test2);
-		t.add(estep_test::test3);
-		t.add(estep_test::test4);
-		t.add(estep_test::test5);
-		t.add(estep_test::test6);
-		t.add(estep_test::test7);
-		t.add(estep_test::test8);
-		t.add(estep_test::test9);
-		t.add(estep_test::test10);
-		t.add(estep_test::test11);
+		t.add(freqchars_test::example, "example");
+		t.add(freqchars_test::test1, "test1");
+		t.add(freqchars_test::test2, "test2");
+		t.add(freqchars_test::test3, "test3");
+		t.add(freqchars_test::test4, "test4");
+		t.add(freqchars_test::test5, "test5");
+		t.add(freqchars_test::test6, "test6");
 
 		t.run();
 	}
